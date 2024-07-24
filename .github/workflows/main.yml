@@ -1,15 +1,17 @@
-name: first workflow
+name: First Workflow
 
 on: push
 
 jobs:
   build:
-    run-ons: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3 
-    - name: Run a sample github action
-      run: echo "this workflow run successfully for thi particular action"
-    - name: simulating error
-      run: echo "error taking place": exit 1
+      - uses: actions/checkout@v3
+      - name: Run a sample GitHub action
+        run: echo "This workflow ran successfully for this particular action"
+      - name: Simulating error
+        run: |
+          echo "Error taking place"
+          exit 1
 
     
